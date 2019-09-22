@@ -49,42 +49,18 @@ const testing7 = () => {
 5/7 = 0.714
 6/7 = 0.857
 7/7 = 1.000
-1*5/7 = 0.714  //round to 1
-2*5/7 = 1.429  //round to 1
-3*5/7 = 2.143  //round to 2
-4*5/7 = 2.857  //round to 3
-5*5/7 = 3.571  //round to 4
-6*5/7 = 4.286  //round to 4
-7*5/7 = 5.000  //round to 5
+1*5/7 = 0.714  //rounds to 1
+2*5/7 = 1.429  //rounds to 1 - 1 is over-represented twice as much as it should be
+3*5/7 = 2.143  //rounds to 2
+4*5/7 = 2.857  //rounds to 3
+5*5/7 = 3.571  //rounds to 4
+6*5/7 = 4.286  //rounds to 4 - 4 is over-represented twice as much as it should be
+7*5/7 = 5.000  //rounds to 5
 */
 
 const rand5 = () => {
   let temp = rand7()
-  switch (temp) {
-    case 1:
-    return Math.round(Math.random())
-    break;
-    case 2:
-    return Math.round(Math.random())
-    break;
-    case 3:
-    return 2;
-    break;
-    case 4:
-    return 3;
-    break;
-    case 5:
-    return Math.round(Math.random()+3)
-    break;
-    case 6:
-    return Math.round(Math.random()+3)
-    break;
-    case 7:
-    return 5;
-    break;
-    default:
-  }
-
+  return Math.round(rand7()*5/7)
 }
 
 //function testing

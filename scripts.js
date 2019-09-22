@@ -5,7 +5,40 @@ Using a function rand7() that returns an integer from 1 to 7 (inclusive) with un
 */
 
 const rand7 = () => {
-  return Math.round(Math.random()*(7-1)+1)
+  //Uniform probability of an integer between 1 & 7
+  return Math.ceil(Math.random()*(7))
+}
+
+const testing7 = () => {
+  let counter = [0,0,0,0,0,0,0]
+  for ( i = 0; i < 100000; i++ ) {
+    let temp = rand7()
+    switch (temp) {
+      case 1:
+      counter[0]++;
+      break;
+      case 2:
+      counter[1]++;
+      break;
+      case 3:
+      counter[2]++;
+      break;
+      case 4:
+      counter[3]++;
+      break;
+      case 5:
+      counter[4]++;
+      break;
+      case 6:
+      counter[5]++;
+      break;
+      case 7:
+      counter[6]++;
+      break;
+      default:
+    }
+  }
+  return counter
 }
 
 const rand5 = () => {
@@ -15,37 +48,43 @@ const rand5 = () => {
 }
 
 //function testing
-let counter = [0,0,0,0,0]
-for ( i = 0; i < 100000; i++ ) {
-  let temp = rand5()
-  switch (temp) {
-    case 1:
-    counter[0]++;
-    break;
-    case 2:
-    counter[1]++;
-    break;
-    case 3:
-    counter[2]++;
-    break;
-    case 4:
-    counter[3]++;
-    break;
-    case 5:
-    counter[4]++;
-    break;
-    default:
+const testing5 = () => {
+  let counter = [0,0,0,0,0]
+  for ( i = 0; i < 100000; i++ ) {
+    let temp = rand5()
+    switch (temp) {
+      case 1:
+      counter[0]++;
+      break;
+      case 2:
+      counter[1]++;
+      break;
+      case 3:
+      counter[2]++;
+      break;
+      case 4:
+      counter[3]++;
+      break;
+      case 5:
+      counter[4]++;
+      break;
+      default:
+    }
   }
+  return counter
 }
-console.log(counter)
+
 
 $(document).ready(function() {
 
   $('#form-1').submit(function(){
     event.preventDefault()
-    input1 = $('#input-1').val()
-    console.log(input1)
-    $('#output-1').text(findTen(input1))
+    let output1 = testing5()
+    $('#output-1').text(output1[0])
+    $('#output-2').text(output1[1])
+    $('#output-3').text(output1[2])
+    $('#output-4').text(output1[3])
+    $('#output-5').text(output1[4])
   })
 
 });

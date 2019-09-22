@@ -8,7 +8,36 @@ const rand7 = () => {
   return Math.round(Math.random()*(7-1)+1)
 }
 
+const rand5 = () => {
+  let temp = rand7()
+  //console.log(temp)
+  return Math.round(temp*5/7)
+}
 
+//function testing
+let counter = [0,0,0,0,0]
+for ( i = 0; i < 100000; i++ ) {
+  let temp = rand5()
+  switch (temp) {
+    case 1:
+    counter[0]++;
+    break;
+    case 2:
+    counter[1]++;
+    break;
+    case 3:
+    counter[2]++;
+    break;
+    case 4:
+    counter[3]++;
+    break;
+    case 5:
+    counter[4]++;
+    break;
+    default:
+  }
+}
+console.log(counter)
 
 $(document).ready(function() {
 

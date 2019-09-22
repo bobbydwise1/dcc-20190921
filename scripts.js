@@ -47,9 +47,29 @@ const rand5 = () => {
   return Math.round(temp*5/7)
 }
 
+/* notes:
+
+1/7 = 0.143
+2/7 = 0.286
+3/7 = 0.429
+4/7 = 0.571
+5/7 = 0.714
+6/7 = 0.857
+7/7 = 1.000
+
+1*5/7 = 0.714  //round to 1
+2*5/7 = 1.429  //round to 1
+3*5/7 = 2.143  //round to 2
+4*5/7 = 2.857  //round to 3
+5*5/7 = 3.571  //round to 4
+6*5/7 = 4.286  //round to 4
+7*5/7 = 5.000  //round to 5
+
+*/
+
 //function testing
 const testing5 = () => {
-  let counter = [0,0,0,0,0]
+  let counter = [0,0,0,0,0,0]
   for ( i = 0; i < 100000; i++ ) {
     let temp = rand5()
     switch (temp) {
@@ -69,6 +89,7 @@ const testing5 = () => {
       counter[4]++;
       break;
       default:
+      counter[5]++;
     }
   }
   return counter
@@ -85,6 +106,7 @@ $(document).ready(function() {
     $('#output-3').text(output1[2])
     $('#output-4').text(output1[3])
     $('#output-5').text(output1[4])
+    $('#output-6').text(output1[5])
   })
 
 });

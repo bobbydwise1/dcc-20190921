@@ -41,23 +41,6 @@ const testing7 = () => {
   return counter
 }
 
-/* notes:
-1/7 = 0.143
-2/7 = 0.286
-3/7 = 0.429
-4/7 = 0.571
-5/7 = 0.714
-6/7 = 0.857
-7/7 = 1.000
-1*5/7 = 0.714  //rounds to 1
-2*5/7 = 1.429  //rounds to 1 - 1 is over-represented twice as much as it should be
-3*5/7 = 2.143  //rounds to 2
-4*5/7 = 2.857  //rounds to 3
-5*5/7 = 3.571  //rounds to 4
-6*5/7 = 4.286  //rounds to 4 - 4 is over-represented twice as much as it should be
-7*5/7 = 5.000  //rounds to 5
-*/
-
 const rand5 = () => {
   let temp = Math.ceil(rand7())
   while (temp > 5) {

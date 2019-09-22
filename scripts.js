@@ -59,13 +59,16 @@ const testing7 = () => {
 */
 
 const rand5 = () => {
-  let temp = rand7()
-  return Math.round(rand7()*5/7)
+  let temp = Math.ceil(rand7())
+  while (temp > 5) {
+    temp = Math.ceil(rand7())
+  }
+  return temp
 }
 
 //function testing
 const testing5 = () => {
-  let counter = [0,0,0,0,0]
+  let counter = [0,0,0,0,0,0]
   for ( i = 0; i < 100000; i++ ) {
     let temp = rand5()
     switch (temp) {
@@ -85,6 +88,7 @@ const testing5 = () => {
       counter[4]++;
       break;
       default:
+      counter[5]++;
     }
   }
   return counter
@@ -101,6 +105,7 @@ $(document).ready(function() {
     $('#output-3').text(output1[2])
     $('#output-4').text(output1[3])
     $('#output-5').text(output1[4])
+    $('#output-6').text(output1[5])
   })
 
 });
